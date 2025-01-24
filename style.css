@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --webkit-box-sizing: border-box;
+    --ms-box-sizing: border-box;
+}
+
+:root {
+    --main-transition: 0.7s;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    font-family: system-ui;
+    background-color: orange;
+}
+
+.overlay {
+    background-color: #ffffff00;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    display: none;
+}
+
+.container {
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    background-color: white;
+    width: 600px;
+    max-width: calc(85%);
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 15px;
+    }
+}
+
+.input-section {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.input-section input {
+    padding: 7px 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-weight: bold;
+    flex: 1;
+    -ms-flex: 1;
+}
+
+.input-section button {
+    padding: 5px 7px;
+    border-radius: 6px;
+    border: 1px solid orange;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+.tasks-list .task {
+    margin-top: 15px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    transition: var(--main-transition);
+}
+
+.tasks-list .task:hover {
+    background-color: #eee;
+}
+
+.tasks-list .task.comleted {
+    opacity: 40%;
+}
+
+.tasks-list .task input[type='checkbox'] {
+    margin-right: 10px;
+}
+
+.tasks-list .task .text {
+    flex: 1;
+    -ms-flex: 1;
+}
+
+@media (max-width: 500px) {
+    .tasks-list .task {
+        padding: 3px 7px;
+        font-size: 0.9rem;
+    }
+
+    .task button {
+        font-size: 0.8rem;
+    }
+}
+
+.tasks-list .task #date {
+    color: #444;
+}
+
+.task button,
+.popup-delete button {
+    padding: 3px 6px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    text-transform: capitalize;
+}
+
+.update {
+    background-color: teal;
+    margin-left: 5px;
+}
+
+.popup-delete {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: var(--main-transition);
+    border: 1px solid #ccc;
+    display: none;
+    z-index: 2;
+}
+
+@media (max-width: 500px) {
+    .popup-delete {
+        font-size: 14px;
+    }
+
+    .popup-delete .buttons button {
+        font-size: 0.8rem;
+    }
+}
+
+.popup-delete .buttons {
+    margin-left: auto;
+    margin-top: 5px;
+    width: fit-content;
+}
+
+.task .delete,
+.popup-delete button#D-no {
+    background-color: brown;
+}
+
+.popup-delete button#D-yes {
+    background-color: green;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+#clearAll,
+.details>div {
+    margin-block: 10px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    text-transform: capitalize;
+}
+
+@media (max-width: 500px) {
+
+    #clearAll,
+    .details>div {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+}
+
+.details #comleted {
+    background-color: green;
+}
+
+.details #numOfTasks {
+    background-color: rgb(222, 95, 4);
+}
+
+.details>div::after {
+    content: attr(number);
+}
+
+
+#clearAll {
+    background-color: brown;
+    margin: 20px auto 0;
+    display: none;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A simple and smart to-do list that makes planning your day easy, these will help you increase productivity and reduce stress levels. It combines smart technology with great design to enable you to create a simple workflow every day.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="overlay"></div>
+        <form class="input-section">
+            <input type="text" name="input-task" placeholder="Enter Your Task">
+            <button>Add Task</button>
+        </form>
+        <h2>Tasks</h2>
+        <div class="details">
+            <div id="comleted" number="0">
+                comleted task :
+            </div>
+            <div id="numOfTasks" number="0">
+                Number Of Tasks :
+            </div>
+        </div>
+        <div class="tasks-list">
+
+        </div>
+        <div class="popup-delete">
+            Are you sure to delete this Task?
+            <div class="buttons">
+                <button id="D-yes">Yes</button>
+                <button id="D-no"
+                    onclick="popupDel.style.display = 'none'; overlay.style.display = 'none';">No</button>
+            </div>
+        </div>
+
+        <button id="clearAll" onclick="clearAllTask();this.style.display= 'none'">Clear All Tasks</button>
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
